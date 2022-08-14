@@ -109,7 +109,7 @@ def uploadpreprocess():
 
         trained_dataset = pd.DataFrame(df)
 
-        trained_dataset.to_csv("static/data-preprocess/new/trained_dataset.csv")
+        trained_dataset.to_csv("/static/data-preprocess/new/trained_dataset.csv")
 
         return render_template('/preprocessing/preprocessing_output.html', data_shape=trained_dataset.shape, table=trained_dataset.head(5).to_html(classes='table table-striped table-dark table-hover x'), dataset_describe=trained_dataset.describe().to_html(classes='table table-striped table-dark table-hover x') )
 
