@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename = 'css/all.css')  }}" rel="stylesheet">
+    <title>Output For Knn</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" style="margin-left: 20px;">
+            Output For Knn
+        </a>
+    </nav>
+    <div class="container">
+    <div class="output">
+        <br><br>
+        <center><h1>&#127881;&#127882;   Hurrey Your Model Trained Successfully  &#127882;&#127881;</h1></center>
+        <br><br>
+    </div>    
+    
+    </div>
+
+    <br><br>
+    <div class="container">
+        <h4><span class="outputtext">🏹 The Model Name is : </span>  {{name_of_model}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The accuracy on Training data : </span> {{result}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The accuracy on Testing data : </span>  {{accuracytestdata}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The accuracy score for the predicted output and and the original output: </span> {{asbetweentestandpred}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The Time elapsed is: </span> {{timeelapsed}}</h4>
+        <br>
+        
+        <h4><span class="outputtext">🏹 The Confusion Matrix : </span></h4>
+        <br>
+        {% for i in cm %}
+        
+        <h3>{{i}}</h3>
+
+
+        {% endfor %}
+        <br>
+        
+    </div>
+
+
+    <!-- change later-->
+    <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}" ></script>
+    
+</body>
+</html>

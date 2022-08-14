@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename = 'css/all.css')  }}" rel="stylesheet">
+    <title>Output For Decisiontree</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" style="margin-left: 20px;">
+            Output For Decisiontree
+        </a>
+    </nav>
+    <div class="container">
+    <div class="output">
+        <br><br>
+        <center><h1>&#127881;&#127882;   Hurrey Your Model Trained Successfully  &#127882;&#127881;</h1></center>
+        <br><br>
+    </div>    
+    
+    </div>
+
+    <br><br>
+    <div class="container">
+        <h4><span class="outputtext">🏹 The Model Name is : </span>  {{name_of_model}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The accuracy on Training data : </span> {{result}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 The accuracy on Testing data : </span>  {{accuracytestdata}}</h4>
+        <br>
+        <h4><span class="outputtext">🏹 Training and Testing accuracy for the tree depth from 1 to 10 is shown in below table : </span></h4>
+        <br>
+        <div class="overflow-auto">
+            
+        {{frame | safe}}
+        </div>
+        <h4><span class="outputtext">🏹 The Visualization for Performance and Depth of tree is displayed below : </span></h4>
+        <br>
+        <div class="container" style="max-height: 600px; max-width: 900px;">
+            <img class="img-fluid"   src="/static/{{visualize}}" alt="not found">
+       
+        </div>
+        <h4><span class="outputtext">🏹 The accuracy score for the predicted output and and the original output: </span> {{asbetweentestandpred}}</h4>
+        <br>
+        
+        <h4><span class="outputtext">🏹 The Confusion Matrix : </span></h4>
+        <br>
+        {% for i in cm %}
+        
+        <h3>{{i}}</h3>
+
+
+        {% endfor %}
+        <br>
+        <h4><span class="outputtext">🏹 The Precision value is : {{precision}} </span></h4>
+        <br>
+        <h4><span class="outputtext">🏹 The Recall value is : {{recall}} </span></h4>
+        <br>
+        <h4><span class="outputtext">🏹 The F-Score is : {{score}} </span></h4>
+        <br>
+  
+    </div>
+
+
+    <!-- change later-->
+    <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}" ></script>
+    
+</body>
+</html>

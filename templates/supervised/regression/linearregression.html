@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+
+    <link href="{{ url_for('static',filename = 'css/all.css')  }}" rel="stylesheet">
+    <title>Linear Regression</title>
+    
+</head>
+<body style="background-color: #E8EAED">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" style="margin-left: 20px;">
+            Simple Linear Regression
+        </a>
+    </nav>
+    
+    <div class="container">
+        
+        <div class="jum" style="background-color: #fff;">
+            <p class="lead"><span style='font-size:40px;'>&#128522; Enjoy The power of Elliot</span> </p>
+            
+            <h1 class="display-10">Provide Details Below</h1>
+         <br>
+
+
+
+
+
+
+
+            <form method="POST" action="/supervised/regression/linearregression" enctype="multipart/form-data">
+                <h4 style="color: salmon">( please do provide single variable dataset... )</h4>
+               <br>
+                <div class="input-group">
+                    
+                    <input type="file" class="form-control" name="my_dataset" placeholder="hi" accept=".csv,.xlsx">
+    
+                </div>
+                <div style="margin-top: 10px; margin-left: 20px; color: black;">
+                    <label> If your want to pre-process data alone..<a href="/preprocessing" > Click Here <a></label>
+                </div>
+                
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text">Model Name</span>
+                    <input type="text" value="LinearRegression" name="name_of_model" class="form-control">
+                </div>
+    
+                <br><br>
+    
+                <button onclick="$('#loading').show();" type="submit" class="btn btn-outline-dark">Train Model &#8987;
+                </button>
+            </form>
+   <br>
+            <div id="loading"  style="display:none;"><center><img class="img img-fluid" style="height:auto;width: auto;" src="{{ url_for('static' , filename = 'image/loading.gif') }}" alt="" /></center></div>
+
+
+        </div>
+    </div>
+
+    <br><br>
+    
+    <!-- change later-->
+    <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}" ></script>
+    
+</body>
+</html>

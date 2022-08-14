@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename = 'css/all.css')  }}" rel="stylesheet">
+
+    <title>Supervised ML Trainer</title>
+  </head>
+  <body>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" style="margin-left: 20px;">
+Supervised ML Model Trainer
+  </a>
+</nav>
+
+<div class="container">
+
+    <div class="row">
+      <div class="col-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+      
+          <img src="{{ url_for('static',filename = 'image/elliot.gif')  }}" class="img-fluid" style="width: auto; height: auto;  max-width: 400px;max-height: 400px;">
+        
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px;">
+        <h1>Hola 👋, I'm Elliot</h1>
+        <h4 style="color: salmon;">Your Supervised Machine Learning Model Trainer</h4>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <h2>&#10024; Regression</h2>
+                <ul >
+                    <li>Linear Regression With One Variable</li>
+                    <li>Linear Regression With Multiple Variables</li>
+                </ul>
+            </div>
+            <div class="col-6">
+
+                <h2>&#10024; Classification</h2> 
+                <ul  >
+                    
+                    <li>Logistic Regression</li>
+                    <li>Decision Tree</li>
+                    <li>K Nearest Neighbors</li>
+                </ul>
+            </div>
+        </div>
+             
+      </div>
+    </div>
+  </div>
+<br><br>
+<div class="container">
+<div class="row">
+
+  <h1>Regression Technique</h1>
+  <br><br>
+
+  <div class="col-xs-12 col-md-4" style="padding-top: 30px;">
+   <div class="card zoom" >
+    <center> <img src="{{ url_for('static',filename = 'image/LR.gif')  }}" style="height: 275px;" class="card-img-top" alt="not found"></center>
+      <div class="card-body">
+        <h5 class="card-title">Linear Regression With One Variable</h5>
+        <p class="card-text"> linear regression is a linear approach to modelling the relationship between a scalar response and one or more explanatory 
+          variables. The case of one explanatory variable in machine Learning is called simple linear regression.</p>
+        <a href="/supervised/regression/linearregression"><button type="button" class="btn btn-outline-dark">Train Linear Regression Model &#x270C;</button></a>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+  <div class="col-xs-12 col-md-4" style="padding-top: 30px;">
+    <div class="card zoom" >
+     <center> <img src="{{ url_for('static',filename = 'image/MLR.gif')  }}" style="height: 275px;" class="card-img-top" alt="not found"></center>
+       <div class="card-body">
+         <h5 class="card-title">Linear Regression With Multiple Variables</h5>
+         <p class="card-text"> linear regression is a linear approach to modelling the relationship between a scalar response and one or more explanatory 
+           variables. The case of more explanatory variable is called multiple variable linear regression.</p>
+         <a href="/supervised/regression/linearregressionwithMVAR"><button type="button" class="btn btn-outline-dark">Train Multiple Linear Regression Model &#x270C;</button></a>
+       </div>
+     </div>
+   
+   </div>
+
+
+  
+</div>
+</div>
+
+<br><br>
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+  
+    <h1>Classification Technique</h1>
+    <br><br>
+  
+    <div class="col-xs-12 col-md-4" style="padding-top: 30px;">
+      <div class="card  zoom" >
+        <center> <img  src="{{ url_for('static',filename = 'image/LOR.gif')  }}" class="card-img-top" style="height: 275px;" alt="not found"> </center>
+        <div class="card-body">
+          <h5 class="card-title">Logistic Regression</h5>
+          <p class="card-text">the logistic model is used to model the probability of a certain class or event existing such as pass/fail, win/lose, alive/dead or healthy/sick. This can be 
+            extended to model several classes of events such as determining whether an image contains a cat, dog, lion, etc.</p>
+          <button type="button" class="btn btn-outline-dark">Train Logistic Regression Model &#x270C;</button>
+        </div>
+      </div>
+   
+    </div>
+  
+  
+    <div class="col-xs-12 col-md-4 " style="padding-top: 30px;">
+     <div class="card zoom" >
+      <center><img src="{{ url_for('static',filename = 'image/DT.gif')  }}"  style="height: 275px;" class="card-img-top" alt="not found"></center>
+        <div class="card-body">
+          <h5 class="card-title">Decision Tree</h5>
+          <p class="card-text">A decision tree is a decision support tool that uses a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. 
+            It is one way to display an algorithm that only contains conditional control statements.</p>
+          <a href="/supervised/classification/decisiontree"><button type="button" class="btn btn-outline-dark">Train Decision Tree Model &#x270C;</button></a>
+        </div>
+      </div>
+    
+    </div>
+
+
+    <div class="col-xs-12 col-md-4 " style="padding-top: 30px;">
+      <div class="card zoom" >
+       <center><img src="{{ url_for('static',filename = 'image/knn.gif')  }}"  style="height: 275px;" class="card-img-top" alt="not found"></center>
+         <div class="card-body">
+           <h5 class="card-title">K Nearest Neighbors</h5>
+           <p class="card-text">the k-nearest neighbors algorithm is a non-parametric classification method first developed by Evelyn Fix and Joseph Hodges in 1951, and later expanded by Thomas Cover. 
+             It is used for classification and regression. In both cases, the input consists of the k closest training examples in data set</p>
+           <a href="/supervised/classification/knn"><button type="button" class="btn btn-outline-dark">Train KNN Model &#x270C;</button></a>
+         </div>
+       </div>
+     
+     </div>
+  
+  
+    
+  </div>
+  </div>
+  <br><br>
+
+
+<!-- change later-->
+<script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}" ></script>
+
+  </body>
+</html>
