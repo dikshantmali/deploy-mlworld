@@ -93,9 +93,9 @@ def dataadd():
 @app.route('/preprocessing/preprocessing' , methods = ['GET','POST'])
 def uploadpreprocess():
     if request.method == 'POST':
-        get_dataset = os.path.join(app.config['DFPr'],secure_filename(app.config['dataset_name_to_use_for_preprocessing']))
         feature = request.form.getlist('features')
         labelencode=request.form.getlist('labelencode')
+        get_dataset = os.path.join(app.config['DFPr'],secure_filename(app.config['dataset_name_to_use_for_preprocessing']))
         df = pd.read_csv(get_dataset)
         df = df.fillna(method = 'ffill')
         sc = StandardScaler()
@@ -109,7 +109,7 @@ def uploadpreprocess():
 
         trained_dataset = pd.DataFrame(df)
 
-        trained_dataset.to_csv("/static/data-preprocess/new/trained_dataset.csv")
+        trained_dataset.to_csv("static/data-preprocess/new/trained_dataset.csv")
 
         return render_template('/preprocessing/preprocessing_output.html', data_shape=trained_dataset.shape, table=trained_dataset.head(5).to_html(classes='table table-striped table-dark table-hover x'), dataset_describe=trained_dataset.describe().to_html(classes='table table-striped table-dark table-hover x') )
 
